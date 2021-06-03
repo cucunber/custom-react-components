@@ -1,0 +1,55 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+input {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+.input_wrapper{
+    position: relative;
+}
+
+.label{
+    transition: .5s ease;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 1rem;
+    pointer-events: all;
+    user-select: all;
+}
+
+.label.hide{
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+.label.moveUp{
+    transform: translate(0, -160%);
+}
+
+.input{
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: inherit;
+}
