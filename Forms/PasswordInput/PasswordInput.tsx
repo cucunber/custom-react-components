@@ -33,7 +33,7 @@ export const PasswordInput: FunctionComponent<PasswordProps> = ({ withShowPass =
             <label htmlFor={`Password${id}`} className={`${s.label} ${activePlaceholder ? (focus || value) ? s.moveUp : s.default : s.hide}`}>{placeholder}</label>
             <input className={s.input} id={`Password${id}`} type={show ? 'text' : 'password'} value={value} onChange={(e: React.ChangeEvent<HTMLInputElement>)=>setValue(e.target.value)} onFocus={()=>setFocus(true)} onBlur={()=>setFocus(false)}/>
 
-            <div onClick={() => setShow(!show)} className={`${s.icon_eye} ${withShowPass ? !show ? s.eye_open : s.eye_close : s.hide}`}>
+            <div onClick={() => setShow(!show)} className={`${s.icon_eye} ${withShowPass ? show ? s.eye_open : s.eye_close : s.hide}`}>
                 <svg viewBox="-20 -200 320 400" xmlns="http://www.w3.org/2000/svg" >
                     <g className={s.eye} strokeWidth="25" fill="none">
 
