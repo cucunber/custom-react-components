@@ -1,0 +1,116 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+input {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+:focus, :active {
+    outline: none;
+}
+
+.input_wrapper {
+    position: relative;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.label {
+    position: absolute;
+    top: -10px;
+    padding: 2.5px 5px;
+    background: rgba(0, 0, 0, .7);
+    border-radius: 3px;
+    font-size: .8rem;
+    color: #fff;
+    overflow: hidden;
+    user-select: none;
+    transform: translateX(-40%);
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+
+.label.active {
+    opacity: 1;
+}
+
+.datalist {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 1;
+    transition: opacity .2s ease;
+}
+
+.datalist option {
+    position: relative;
+    font-size: .6rem;
+    top: 5px;
+    transform: translateX(-50%);
+}
+
+.datalist.hide {
+    opacity: 0;
+}
+
+.input{
+    overflow: hidden;
+    width: 100%;
+    -webkit-appearance: none;
+    background-color: #1F2235;
+    border-radius: 4px;
+}
+
+.input::-webkit-slider-runnable-track {
+    height: 6px;
+    -webkit-appearance: none;
+    color: #4E7CFF;
+    margin-top: -1px;
+    cursor: pointer;
+}
+
+.input::-webkit-slider-thumb {
+    width: 1px;
+    -webkit-appearance: none;
+    height: 6px;
+    cursor: pointer;
+    background: #4E7CFF;
+    box-shadow: -80px 0 0 80px #4E7CFF;
+}
+
+/** FF*/
+
+.input::-moz-range-progress {
+    background-color: #4E7CFF;
+}
+
+.input::-moz-range-track {
+    background-color: #1F2235;
+}
+
+/* IE*/
+
+.input::-ms-fill-lower {
+    background-color: #4E7CFF;
+}
+
+.input::-ms-fill-upper {
+    background-color: #1F2235;
+}
