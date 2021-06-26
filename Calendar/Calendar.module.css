@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+* {
+    box-sizing: border-box;
+    transition: var(--transition);
+    font-family: var(--font-family);
+}
+
+:root {
+    --padding: 5px;
+    --border-current-color: rgb(46, 46, 46);
+    --border-prev-next-color: var(--border-current-color);
+    --border-current-size: .7px;
+    --border-prev-next-size: var(--border-current-size);
+    --border-current-type: solid;
+    --border-prev-next-type: var(--border-current-type);
+    --transition: .4s ease;
+    --currentMonthColor: rgb(199, 199, 199);
+    --prevAndNextMonthColor: rgb(151, 151, 151);
+    --navigationColor: rgb(138, 138, 138);
+    --selectedDay: crimson;
+    --currentDayColor: cornflowerblue;
+    --text-color: black;
+    --hoverColor: rgb(211, 81, 107);
+    --hoverTextColor: white;
+    --selectedDayTextColor: rgb(53, 6, 15);
+    --currentDayTextColor: rgb(25, 54, 109);
+    --font-family: 'Open Sans', sans-serif;
+}
+
+.chocolate{
+    --border-current-color: #21222e;
+    --border-prev-next-color: var(--border-current-color);
+    --currentMonthColor: #e7dbcb;
+    --prevAndNextMonthColor: #AD9C90;
+    --navigationColor: #AD9C90;
+    --selectedDay: #5c61ff;
+    --selectedDayTextColor: #ffffff;
+    --hoverColor: #8d90fd;
+    --currentDayColor: #ffffff;
+    --currentDayTextColor: #21222e;
+    --text-color:#21222e;
+}
+
+.christmas{
+    --border-current-color: #263e3e;
+    --border-prev-next-color: var(--border-current-color);
+    --currentMonthColor: #f2ebdb;
+    --prevAndNextMonthColor: #d3b692;
+    --navigationColor: #d3b692;
+    --selectedDay: #cd303b;
+    --selectedDayTextColor: #ffffff;
+    --hoverColor: #db6970;
+    --currentDayColor: #ffffff;
+    --currentDayTextColor: #263e3e;
+    --text-color:#263e3e;
+}
+
+.greenToy{
+    --border-current-color: #1a5a40;
+    --border-prev-next-color: var(--border-current-color);
+    --currentMonthColor: #d2e4e3;
+    --prevAndNextMonthColor: #6fa16d;
+    --navigationColor: #d2e4e3;
+    --selectedDay: #99b1b8;
+    --selectedDayTextColor: #ffffff;
+    --hoverColor: #aac5ce;
+    --currentDayColor: #ffffff;
+    --currentDayTextColor: #1a5a40;
+    --text-color:#1a5a40;
+}
+
+.unicorn{
+    --border-current-color: #C9B1FF;
+    --border-prev-next-color: var(--border-current-color);
+    --currentMonthColor: #FFF3AD;
+    --prevAndNextMonthColor: #BCFFBC;
+    --navigationColor: #FFCAF2;
+    --selectedDay: #FFB2B1;
+    --selectedDayTextColor: #c95957;
+    --hoverColor: #fda2a0;
+    --currentDayColor: #ffffff;
+    --currentDayTextColor: #c95957;
+    --text-color:#a686f3;
+}
+
+.aqua{
+    --border-current-color: #00827E;
+    --border-prev-next-color: var(--border-current-color);
+    --currentMonthColor: #99E6B2;
+    --prevAndNextMonthColor: #69d3b0;
+    --navigationColor: #7AD2A8;
+    --selectedDay: #1F9688;
+    --selectedDayTextColor: #fff;
+    --hoverColor: #39b4a6;
+    --currentDayColor: #ffffff;
+    --currentDayTextColor: #1F9688;
+    --text-color:#00827E;
+}
+
+.autumn{
+    --border-current-color: #CB3503;
+    --border-prev-next-color: var(--border-current-color);
+    --currentMonthColor: #FEB845;
+    --prevAndNextMonthColor: #FB931F;
+    --navigationColor: #FB931F;
+    --selectedDay: #E65D0A;
+    --selectedDayTextColor: #fff;
+    --hoverColor: #f78b49;
+    --currentDayColor: #ffffff;
+    --currentDayTextColor: #FB931F;
+    --text-color:#CB3503;
+}
+
+.night{
+    --border-current-color: #1F234E;
+    --border-prev-next-color: var(--border-current-color);
+    --currentMonthColor: #4D507F;
+    --prevAndNextMonthColor: #2F325D;
+    --navigationColor: #404472;
+    --selectedDay: #fde978;
+    --selectedDayTextColor: #1F234E;
+    --hoverColor: #1F234E;
+    --currentDayColor: #ffffff;
+    --currentDayTextColor: #1F234E;
+    --text-color:#fff;
+}
+
+.calendarWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.calendar {
+    width: 100%;
+    height: 100%;
+}
+
+.daysItem {
+    flex: 0 0 14.28%;
+    height: 30px;
+    padding: var(--padding);
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.calendarItem {
+    flex: 0 0 14.28%;
+    min-height: 50px;
+    padding: var(--padding);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.calendarItem:hover{
+    background: var(--hoverColor);
+}
+
+.navigation {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    background: var(--navigationColor);
+}
+
+.button {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 var(--padding);
+}
+
+.monthYear {
+    flex: 0 0 40%;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.button svg {
+    max-width: 14px;
+    max-height: 14px;
+}
+
+.currentMonth {
+    font-weight: 500;
+    cursor: pointer;
+    background: var(--currentMonthColor);
+    border: var(--border-current-size) var(--border-current-type) var(--border-current-color)
+}
+
+.otherMonth {
+    background: var(--prevAndNextMonthColor);
+    border: var(--border-prev-next-size) var(--border-prev-next-type) var(--border-prev-next-color)
+}
+
+.currentDay {
+    font-weight: bold;
+    background: var(--currentDayColor);
+}
+
+.currentDay .number{
+    color: var(--currentDayTextColor)
+}
+
+.selectedDay {
+    background: var(--selectedDay);
+}
+
+.selectedDay .number{
+    color: var(--selectedDayTextColor);
+}
+
+.number {
+    position: absolute;
+    z-index: 1;
+    color: var(--text-color);
+}
+
+.calendarItem:hover .number{
+    color: var(--hoverTextColor)
+}
+
+.topLeft {
+    top: var(--padding);
+    left: var(--padding);
+}
+
+.topCenter {
+    top: var(--padding);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.topRight {
+    top: var(--padding);
+    right: var(--padding);
+}
+
+.centerLeft {
+    top: 50%;
+    left: var(--padding);
+    transform: translateY(-50%);
+}
+
+.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.centerRight {
+    top: 50%;
+    right: var(--padding);
+    transform: translateY(-50%);
+}
+
+.bottomLeft {
+    bottom: var(--padding);
+    left: var(--padding);
+}
+
+.bottomCenter {
+    bottom: var(--padding);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bottomRight {
+    bottom: var(--padding);
+    right: var(--padding);
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.button:hover {
+    background: var(--hoverColor);
+}
+
+.button svg{
+   color: var(--border-current-color)
+}
+
+.button{
+    background: var(--currentMonthColor);
+}
+
+@media(max-width:1440px){
+    .calendarItem{  
+        min-height: 75px;
+    }
+}
+
+@media(min-width: 1441px){
+    .calendarItem{  
+        min-height: 100px;
+    }
+}
+
+@media(max-width: 260px) {
+    .navigation {
+        padding: 5px;
+    }
+    .button {
+        transform: scale(.8);
+    }
+}
